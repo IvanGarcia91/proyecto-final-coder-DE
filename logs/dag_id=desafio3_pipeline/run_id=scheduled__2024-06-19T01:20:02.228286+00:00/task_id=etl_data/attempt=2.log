@@ -1,0 +1,54 @@
+[2024-06-20 01:50:45,557] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: desafio3_pipeline.etl_data scheduled__2024-06-19T01:20:02.228286+00:00 [queued]>
+[2024-06-20 01:50:45,575] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: desafio3_pipeline.etl_data scheduled__2024-06-19T01:20:02.228286+00:00 [queued]>
+[2024-06-20 01:50:45,576] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-20 01:50:45,576] {taskinstance.py:1377} INFO - Starting attempt 2 of 2
+[2024-06-20 01:50:45,576] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-20 01:50:45,600] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): etl_data> on 2024-06-19 01:20:02.228286+00:00
+[2024-06-20 01:50:45,610] {standard_task_runner.py:52} INFO - Started process 1809 to run task
+[2024-06-20 01:50:45,613] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'desafio3_pipeline', 'etl_data', 'scheduled__2024-06-19T01:20:02.228286+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/weather_dags.py', '--cfg-path', '/tmp/tmpilb_pyg9', '--error-file', '/tmp/tmpb0pikc25']
+[2024-06-20 01:50:45,615] {standard_task_runner.py:80} INFO - Job 20: Subtask etl_data
+[2024-06-20 01:50:45,699] {task_command.py:371} INFO - Running <TaskInstance: desafio3_pipeline.etl_data scheduled__2024-06-19T01:20:02.228286+00:00 [running]> on host 3f4d47b0555b
+[2024-06-20 01:50:45,814] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=desafio3_pipeline
+AIRFLOW_CTX_TASK_ID=etl_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-06-19T01:20:02.228286+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-06-19T01:20:02.228286+00:00
+[2024-06-20 01:50:47,995] {logging_mixin.py:115} INFO - Conectado a Redshift con éxito!
+[2024-06-20 01:50:53,403] {python.py:173} INFO - Done. Returned value was:            city weather_description  ...              sunset        day
+0  Buenos Aires           clear sky  ... 2024-06-19 17:49:56 2024-06-20
+1       Mendoza          few clouds  ... 2024-06-19 18:36:08 2024-06-20
+2    Corrientes       broken clouds  ... 2024-06-19 18:08:51 2024-06-20
+3         Salta    scattered clouds  ... 2024-06-19 18:40:59 2024-06-20
+4       Córdoba    scattered clouds  ... 2024-06-19 18:21:10 2024-06-20
+
+[5 rows x 11 columns]
+[2024-06-20 01:50:53,560] {xcom.py:586} ERROR - Could not serialize the XCom value into JSON. If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your *** config.
+[2024-06-20 01:50:53,562] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 68, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 2412, in xcom_push
+    session=session,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 68, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/xcom.py", line 198, in set
+    map_index=map_index,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/xcom.py", line 583, in serialize_value
+    return json.dumps(value).encode('UTF-8')
+  File "/usr/local/lib/python3.7/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/usr/local/lib/python3.7/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/local/lib/python3.7/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/local/lib/python3.7/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type DataFrame is not JSON serializable
+[2024-06-20 01:50:53,588] {taskinstance.py:1420} INFO - Marking task as FAILED. dag_id=desafio3_pipeline, task_id=etl_data, execution_date=20240619T012002, start_date=20240620T015045, end_date=20240620T015053
+[2024-06-20 01:50:53,621] {standard_task_runner.py:97} ERROR - Failed to execute job 20 for task etl_data (Object of type DataFrame is not JSON serializable; 1809)
+[2024-06-20 01:50:53,661] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-06-20 01:50:53,722] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

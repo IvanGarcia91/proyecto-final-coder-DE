@@ -1,0 +1,25 @@
+[2024-06-20 01:20:12,429] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: desafio3_pipeline.send_mail scheduled__2024-06-19T01:20:02.228286+00:00 [queued]>
+[2024-06-20 01:20:12,451] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: desafio3_pipeline.send_mail scheduled__2024-06-19T01:20:02.228286+00:00 [queued]>
+[2024-06-20 01:20:12,452] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-20 01:20:12,453] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2024-06-20 01:20:12,453] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-20 01:20:12,485] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): send_mail> on 2024-06-19 01:20:02.228286+00:00
+[2024-06-20 01:20:12,505] {standard_task_runner.py:52} INFO - Started process 777 to run task
+[2024-06-20 01:20:12,521] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'desafio3_pipeline', 'send_mail', 'scheduled__2024-06-19T01:20:02.228286+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/weather_dags.py', '--cfg-path', '/tmp/tmpq9xbkrwr', '--error-file', '/tmp/tmp7rl32vc4']
+[2024-06-20 01:20:12,523] {standard_task_runner.py:80} INFO - Job 19: Subtask send_mail
+[2024-06-20 01:20:12,760] {task_command.py:371} INFO - Running <TaskInstance: desafio3_pipeline.send_mail scheduled__2024-06-19T01:20:02.228286+00:00 [running]> on host 3f4d47b0555b
+[2024-06-20 01:20:13,073] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=desafio3_pipeline
+AIRFLOW_CTX_TASK_ID=send_mail
+AIRFLOW_CTX_EXECUTION_DATE=2024-06-19T01:20:02.228286+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-06-19T01:20:02.228286+00:00
+[2024-06-20 01:20:15,541] {logging_mixin.py:115} INFO - (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-705ccb6bf4fsm11274980b3a.169 - gsmtp')
+[2024-06-20 01:20:15,542] {logging_mixin.py:115} INFO - El email no se pudo enviar.
+[2024-06-20 01:20:15,542] {python.py:173} INFO - Done. Returned value was: None
+[2024-06-20 01:20:15,566] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=desafio3_pipeline, task_id=send_mail, execution_date=20240619T012002, start_date=20240620T012012, end_date=20240620T012015
+[2024-06-20 01:20:15,620] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-06-20 01:20:15,680] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

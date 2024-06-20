@@ -1,0 +1,24 @@
+[2024-06-20 03:06:40,023] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: desafio3_pipeline.etl_data scheduled__2024-06-19T03:06:36.840405+00:00 [queued]>
+[2024-06-20 03:06:40,046] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: desafio3_pipeline.etl_data scheduled__2024-06-19T03:06:36.840405+00:00 [queued]>
+[2024-06-20 03:06:40,047] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-20 03:06:40,047] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2024-06-20 03:06:40,048] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-20 03:06:40,090] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): etl_data> on 2024-06-19 03:06:36.840405+00:00
+[2024-06-20 03:06:40,101] {standard_task_runner.py:52} INFO - Started process 4368 to run task
+[2024-06-20 03:06:40,107] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'desafio3_pipeline', 'etl_data', 'scheduled__2024-06-19T03:06:36.840405+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/weather_dags.py', '--cfg-path', '/tmp/tmp5dmwoiid', '--error-file', '/tmp/tmpqjmzvj5g']
+[2024-06-20 03:06:40,108] {standard_task_runner.py:80} INFO - Job 29: Subtask etl_data
+[2024-06-20 03:06:40,219] {task_command.py:371} INFO - Running <TaskInstance: desafio3_pipeline.etl_data scheduled__2024-06-19T03:06:36.840405+00:00 [running]> on host 3f4d47b0555b
+[2024-06-20 03:06:40,358] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=desafio3_pipeline
+AIRFLOW_CTX_TASK_ID=etl_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-06-19T03:06:36.840405+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-06-19T03:06:36.840405+00:00
+[2024-06-20 03:06:42,507] {logging_mixin.py:115} INFO - Conectado a Redshift con éxito!
+[2024-06-20 03:06:59,635] {python.py:173} INFO - Done. Returned value was: {"city":{"0":"Buenos Aires","1":"Mendoza","2":"Corrientes","3":"Salta","4":"C\u00f3rdoba"},"weather_description":{"0":"clear sky","1":"few clouds","2":"broken clouds","3":"broken clouds","4":"broken clouds"},"temperature":{"0":12.25,"1":9.39,"2":21.52,"3":12.19,"4":10.19},"feels_like":{"0":11.34,"1":8.49,"2":22.32,"3":11.77,"4":9.28},"temp_min":{"0":9.09,"1":9.39,"2":21.29,"3":12.19,"4":9.79},"temp_max":{"0":13.5,"1":9.39,"2":21.86,"3":13.98,"4":12.12},"humidity":{"0":68,"1":66,"2":98,"3":87,"4":76},"wind_speed":{"0":9.39,"1":2.06,"2":1.79,"3":1.54,"4":1.54},"sunrise":{"0":1718783999000,"1":1718872657000,"2":1718869496000,"3":1718870726000,"4":1718871324000},"sunset":{"0":1718819396000,"1":1718908579000,"2":1718906942000,"3":1718908870000,"4":1718907681000},"day":{"0":1718841600000,"1":1718841600000,"2":1718841600000,"3":1718841600000,"4":1718841600000}}
+[2024-06-20 03:06:59,693] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=desafio3_pipeline, task_id=etl_data, execution_date=20240619T030636, start_date=20240620T030640, end_date=20240620T030659
+[2024-06-20 03:06:59,744] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-06-20 03:06:59,795] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
