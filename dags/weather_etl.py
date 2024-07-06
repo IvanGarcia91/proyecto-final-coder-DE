@@ -12,7 +12,6 @@ import smtplib
 def etl_data():
 
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
-    #api_key = "99d7b2c4f0d060b28c1a933b2af566a5"
     api_key=Variable.get("API_KEY")
 
     #ciudades de donde queremos sacar info.
